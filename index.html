@@ -16,17 +16,69 @@
       integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
       crossorigin="anonymous"
     />
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="./style.css" />
   </head>
 
   <body>
     <h1 id="title"></h1>
     <h2 id="demo"></h2>
+    <h3 class="demo_title" id="title_2">Demo thêm class vào thẻ html</h3>
+
+    <input type="text" value="Thục Vân" id="hoTen" />
 
     <img
       id="hinhAnh"
       src="https://popsimg.akamaized.net/api/v2/containers/file2/cms_topic/doraemons9_05_seriesdetailimagemobile-80424f74d030-1609395371290-iZgELVcX.png?v=0"
       alt=""
     />
+
+    <div class="container">
+      <h2>Bài tập lấy dữ liệu người dùng</h2>
+      <!-- bs5-form-input  -->
+      <div class="mb-3">
+        <label for="" class="form-label">Email</label>
+        <input
+          type="text"
+          class="form-control"
+          name=""
+          id="email"
+          aria-describedby="helpId"
+          placeholder="Vui lòng nhập email"
+        />
+      </div>
+      <div class="mb-3">
+        <label for="" class="form-label">Mật khẩu</label>
+        <input
+          type="password"
+          class="form-control"
+          name=""
+          id="matKhau"
+          aria-describedby="helpId"
+          placeholder="Vui lòng nhập mật khẩu"
+        />
+      </div>
+      <button class="btn btn-dark" id="btnBaiTap1">Hiển thị dữ liệu</button>
+    </div>
+
+    <div class="container">
+      <h2>Bài tập bật tắt bóng đèn</h2>
+      <button id="btnTatDen" class="btn btn-danger">Tắt đèn</button>
+      <img
+        style="border: 2px solid black"
+        src="./img/pic_bulbon.gif"
+        alt=""
+        id="hinhBongDen"
+      />
+      <button id="btnBatDen" class="btn btn-primary disabled">Bật đèn</button>
+    </div>
+
+    <button class="btn btn-warning">Bật tắt light theme</button>
+    <p id="demo3" class="hehe">Lorem ipsum dolor sit amet.</p>
+
+    <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+
     <!-- Bootstrap JavaScript Libraries -->
     <script
       src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
@@ -40,6 +92,7 @@
       crossorigin="anonymous"
     ></script>
 
+    <!-- Main JavaScript -->
     <script src="./index.js"></script>
   </body>
 </html>

@@ -21,3 +21,81 @@ theH1.style.padding = "10px"
 // Tương tác với thẻ img
 document.getElementById("hinhAnh").src =
   "https://upload.wikimedia.org/wikipedia/en/b/bd/Doraemon_character.png"
+
+// Tương tác thêm một số class vào trong thẻ html
+let classTheH3 = document.getElementById("title_2").className
+console.log(classTheH3)
+document.getElementById("title_2").className =
+  classTheH3 + " bg-black text-white" // "a" + "b" => "ab" => lưu ý cần có khoảng cách
+
+// Cách ghi nhanh hơn bằng toán tử +=
+// document.getElementById("title_2").className += " bg-black text-white"
+
+// Tương tác với thẻ input
+let hoTen = (document.getElementById("hoTen").value = "MeiCloudie")
+console.log(hoTen)
+
+// Sự kiện click
+
+// document.getElementById("btnBaiTap1").onclick = function () {
+//   console.log("Hello tôi là nút button")
+//   let email = document.getElementById("email").value
+//   let matKhau = document.getElementById("matKhau").value
+//   console.log(email)
+//   console.log(matKhau)
+// }
+
+document.querySelector(".container .btn-dark").onclick = function () {
+  console.log("Hello tôi là nút button")
+  // Tương tác lấy dữ liệu người dùng
+  let email = document.getElementById("email").value
+  let matKhau = document.getElementById("matKhau").value
+  console.log(email)
+  console.log(matKhau)
+}
+
+// Yêu cầu bài tập bật tắt bóng đèn
+// Thực hiện xây dựng 2 chức năng click dành cho nút bật đèn và tắt đèn
+// Khi người dùng bấm vào nút tắt đèn,thực hiện cho bóng đèn tắt đi (thay đổi ở thẻ img)
+// Khi người dùng bấm vào nút bật đèn, thực hiện cho bóng đèn sáng
+// Sau khi hoàn thành 2 chức năng, tối ưu lại phần code để bảo trì và sửa lỗi cho tốt (khi sử dụng dom cho một thẻ nhiều lần, nên tạo biến lưu trữ)
+let hinhBongDen = document.getElementById("hinhBongDen")
+let btnBatDen = document.getElementById("btnBatDen")
+let btnTatDen = document.getElementById("btnTatDen")
+
+btnTatDen.onclick = function () {
+  console.log("Nút tắt đèn")
+  hinhBongDen.src = "./img/pic_bulboff.gif"
+  let btnTatDenClass = btnTatDen.className
+  btnTatDen.className = btnTatDenClass + " disabled"
+  btnBatDen.className = "btn btn-primary"
+}
+
+btnBatDen.onclick = function () {
+  console.log("Nút bật đèn")
+  hinhBongDen.src = "./img/pic_bulbon.gif"
+  let btnBatDenClass = btnBatDen.className
+  btnBatDen.className = btnBatDenClass + " disabled"
+  btnTatDen.className = "btn btn-danger"
+}
+
+hinhBongDen.onmouseenter = function () {
+  console.log("Tôi đang ở trong vùng của img")
+  hinhBongDen.src = "./img/pic_bulbon.gif"
+}
+
+hinhBongDen.onmouseleave = function () {
+  console.log("Tôi đã đi khỏi vùng của img")
+  hinhBongDen.src = "./img/pic_bulboff.gif"
+}
+
+hinhBongDen.onmousemove = function () {
+  console.log("tôi là onmousemove")
+}
+
+document.querySelector(".btn-warning").onclick = function () {
+  document.querySelector("body").classList.toggle("dark") // => toggle như nút bật tắt
+  //   document.getElementById("demo3").classList.add("mauChuDo") // => kiểm tra có rồi thì ko thêm
+  //   document.getElementById("demo3").className += " mauChuDo" // => duplicate
+  //   document.getElementById("demo3").classList.remove("hehe") // => xoá class đó
+}
