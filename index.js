@@ -99,3 +99,31 @@ document.querySelector(".btn-warning").onclick = function () {
   //   document.getElementById("demo3").className += " mauChuDo" // => duplicate
   //   document.getElementById("demo3").classList.remove("hehe") // => xoá class đó
 }
+
+// Tương tác tạo thẻ html thông qua JS
+let theImg = document.createElement("img")
+console.log(theImg)
+theImg.src =
+  "https://popsimg.akamaized.net/api/v2/containers/file2/cms_topic/doraemons9_05_seriesdetailimagemobile-80424f74d030-1609395371290-iZgELVcX.png?v=0"
+theImg.className = "h-100 w-100"
+document.getElementById("demoCreateElement").appendChild(theImg)
+
+let phepTinh = 3 + 4 + 10 * 30
+let srcImg =
+  "https://i.pinimg.com/736x/5d/6d/23/5d6d23fd7adb44baba20a60c252da339.jpg"
+let hoTenPokemon = "Pikachu"
+
+// Sử dụng một số chuỗi html
+// Kỹ thuật string template (ES6)
+document.getElementById("demo3").innerHTML += `
+<div class="card" style="width: 18rem;">
+<img src="${srcImg}" class="card-img-top" alt="...">
+<div class="card-body">
+  <h5 class="card-title">${hoTenPokemon}</h5>
+  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+  <a href="#" class="btn btn-primary">Go somewhere</a>
+</div>
+</div>
+`
+// Thực hiện viết DOM tới thẻ div vừa tạo ra và thay đổi nội dung
+document.getElementById("card-body").classList.add("bg-danger")
